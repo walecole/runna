@@ -56,7 +56,7 @@ class TestLoadCSVToBigQuery(unittest.TestCase):
         mock_job.result.side_effect = Exception("Loading error")
         mock_bigquery_client.return_value.load_table_from_uri.return_value = mock_job
         
-        # Execute and verify error handling with self.bucket_name and self.dataset_id
+        
         with self.assertRaises(Exception):
             load_csv_files_to_bigquery(self.bucket_name, self.dataset_id)
 

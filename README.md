@@ -2,7 +2,7 @@
 
 ## My approach, I have flattened the json data, stored it in a suitable format(csv) for staging, and denormalized the data before storing in the datawarehouse(BigQuery). The tables are :
 
-Dimension Modelling: Storing every dimension in its own table. 
+Dimension Modelling: Storing every dimension in its own table.
 
 - activity_data: Contains information about the users, activity details, plan details, workout id, record_type and week of plan.
 - lap_data: Contains information about lap details, I have included activity_id so it can be linked to the user.
@@ -118,7 +118,7 @@ python -m unittest discover -p "*_test.py"
 
 #### Scripts
 ```python
-GOOGLE_APPLICATION_CREDENTIALS = "KEY_PATH"
+export GOOGLE_APPLICATION_CREDENTIALS = "KEY_PATH"
 python download_json_to_csv.py 
 python load_multiple_csv.py
 ```
