@@ -2,7 +2,7 @@
 
 ## My approach, I have flattened the json data, stored it in a suitable format(csv) for staging, and denormalized the data before storing in the datawarehouse(BigQuery). The tables are :
 
-- Dimension Modelling: Storing every dimension in its own table. That was why i went with the approach of storing in different tables 
+Dimension Modelling: Storing every dimension in its own table. 
 
 - activity_data: Contains information about the users, activity details, plan details, workout id, record_type and week of plan.
 - lap_data: Contains information about lap details, I have included activity_id so it can be linked to the user.
