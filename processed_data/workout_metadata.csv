@@ -1,3 +1,2 @@
 activity_id,workout_type,run_type,distance,current_est_5k_time_secs,planned_workout_date,processing_time
-activity1,RUN,TEMPO,6.2,1475,2024-02-05,2024-11-01
-activity2,RUN,LONG_RUN,5,1649,,2024-11-01
+1,run,easy,5,1500,2021-01-01,2024-11-04

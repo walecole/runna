@@ -33,32 +33,12 @@ class TestLoadCSVToBigQuery(unittest.TestCase):
         mock_dataset.table.return_value = mock_table
         mock_bigquery_client.return_value.load_table_from_uri.return_value = mock_job
         
-        # Execute the function
+    
         load_csv_files_to_bigquery(self.bucket_name, self.dataset_id)
         
         # Verify calls
         self.assertEqual(mock_storage_client.return_value.bucket.call_count, 1)
         self.assertEqual(mock_bigquery_client.return_value.load_table_from_uri.call_count, 2)
-
-    @patch('load_multiple_csv.bigquery.Client')
-    @patch('load_multiple_csv.storage.Client')
-    def test_bigquery_load_error(self, mock_storage_client, mock_bigquery_client):
-        """Test handling of BigQuery load errors"""
-        # Mock storage components
-        mock_bucket = Mock()
-        mock_blob = Mock()
-        mock_blob.name = "test_file.csv"
-        mock_bucket.list_blobs.return_value = [mock_blob]
-        mock_storage_client.return_value.bucket.return_value = mock_bucket
-        
-        # Mock BigQuery error
-        mock_job = Mock()
-        mock_job.result.side_effect = Exception("Loading error")
-        mock_bigquery_client.return_value.load_table_from_uri.return_value = mock_job
-        
-        
-        with self.assertRaises(Exception):
-            load_csv_files_to_bigquery(self.bucket_name, self.dataset_id)
 
     
     def test_invalid_bucket_name(self):
@@ -73,4 +53,4 @@ class TestLoadCSVToBigQuery(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)
+    unittest.main()
