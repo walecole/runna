@@ -11,7 +11,7 @@ class TestWorkoutImporter(unittest.TestCase):
         self.importer = WorkoutImporter(data_directory='./data')
         self.importer.combined_data = [
             {
-                "activityId": "1",
+                "activityId": "activity1",
                 "userId": "user1",
                 "planDetails": {"id": "plan1", "planLength": 4},
                 "workoutId": "workout1",
@@ -84,7 +84,7 @@ class TestWorkoutImporter(unittest.TestCase):
         ]
 
     @patch('builtins.open', new_callable=mock_open, read_data=json.dumps({
-        "activityId": "1",
+        "activityId": "activity1",
         "userId": "user1",
         "planDetails": {"id": "plan1", "planLength": 4},
         "workoutId": "workout1",

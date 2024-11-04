@@ -72,8 +72,8 @@ ON
 GROUP BY 1, 2, 3, 4, 6
 ```
 3. How did this user perform compared with other users in this same workout?
-    - `user-2` ran 5.0km in a total time of 1983933 
-    - `user-1` who ran 5.5km in a time of 2151361
+    - `user-2` ran 5.0km in a total time of ~33 minutes
+    - `user-1` ran 5.5km in a total time of ~36 minutes
 ```sql
 SELECT
   a.activity_id,
@@ -97,7 +97,9 @@ ON
 GROUP BY 1, 2, 3, 4, 7
 ```
 4. In the last 6 months, how many TEMPO sessions have been completed?
-    - user-1 ran a TEMPO session, more clarification needed for specifics on the question. 
+    - In the last 6 months a total of 0 TEMPO sessions were completed. 
+        - `user-1`: 0 sessions
+        - `user-2`: 0 sessions
 ```sql
 SELECT
   b.activity_id,
@@ -110,19 +112,19 @@ JOIN
 ON
   a.activity_id = b.activity_id
 WHERE
-  run_type = 'TEMPO'
+  run_type = 'TEMPO' and planned_workout_date = DATE_SUB(current_date(), INTERVAL 6 month)
 ```
 
 #### Run Tests
 
 ```python
-python -m unittest discover -p "*_test.py"
+python -m unittest discover -p "test_*.py"
 ```
 
 #### Scripts
 ```python
 export GOOGLE_APPLICATION_CREDENTIALS = "KEY_PATH"
-python download_json_to_csv.py 
+python workout_importer.py 
 python load_multiple_csv.py
 ```
 
