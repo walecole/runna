@@ -32,7 +32,7 @@ class TestWorkoutImporter(unittest.TestCase):
                         "minHeartRate": 110,
                         "maxSpeed": 12,
                         "movingTime": 30,
-                        "startTimestamp": "2021-01-01T00:00:00Z",
+                        "startTimestamp": "1723368932948",
                         "totalTime": 35,
                         "wktStepIndex": 1
                     }
@@ -45,7 +45,7 @@ class TestWorkoutImporter(unittest.TestCase):
                         "heartRate": 120,
                         "movingTime": 5,
                         "speed": 10,
-                        "timestamp": "2021-01-01",
+                        "timestamp": "1723368932948",
                         "power": 200,
                         "strideLength": 1,
                         "stepIndex": 1,
@@ -105,7 +105,7 @@ class TestWorkoutImporter(unittest.TestCase):
                 "minHeartRate": 110,
                 "maxSpeed": 12,
                 "movingTime": 30,
-                "startTimestamp": "2021-01-01T00:00:00Z",
+                "startTimestamp": "1723368932948",
                 "totalTime": 35,
                 "wktStepIndex": 1
             }
@@ -118,7 +118,7 @@ class TestWorkoutImporter(unittest.TestCase):
                 "heartRate": 120,
                 "movingTime": 5,
                 "speed": 10,
-                "timestamp": "2021-01-01",
+                "timestamp": "1723368932948",
                 "power": 200,
                 "strideLength": 1,
                 "stepIndex": 1,
